@@ -1,2 +1,2 @@
-Samsung Tab Pro 12.2 SM-900 v2wifixx vendor repo for CyanogenMod 11.0
+Samsung Tab Pro 12.2 SM-900 v2wifixx vendor repo for CyanogenMod
 
