@@ -1,12 +1,12 @@
 # Sample variables file for Samsung BCM4354WLBGA iPA, eLNA board with SDIO for production package
-# V2-WIFI Rev0.1 - 2014. 02. 06 only for MFG test requested by Samsung (-2dB back off for manual test)
+# V1-wifi - 2013.01.05 for mass production
 NVRAMRev=$Rev: 373428 $
 sromrev=11
 boardrev=0x1101
 boardtype=0x06db
 boardflags=0x12401001
 boardflags2=0x00802000
-boardflags3=0x48000109
+boardflags3=0x40000109
 
 macaddr=00:90:4c:16:70:01
 ccode=ALL
@@ -29,7 +29,7 @@ muxenab=0x10
 xtalfreq=37400
 
 ## Rx setting for Ant0
-rxgains2gelnagaina0=3
+rxgains2gelnagaina0=5
 rxgains5gelnagaina0=3
 rxgains5gmelnagaina0=3
 rxgains5ghelnagaina0=3
@@ -46,7 +46,7 @@ rxgains5ghtrisoa0=5
 
 ## Rx setting for Ant1
 
-rxgains2gelnagaina1=3
+rxgains2gelnagaina1=2
 rxgains5gelnagaina1=3
 rxgains5gmelnagaina1=3
 rxgains5ghelnagaina1=3
@@ -65,10 +65,10 @@ rxchain=3
 txchain=3
 aa2g=3
 aa5g=3
-agbg0=0
-agbg1=0
-aga0=0
-aga1=0
+agbg0=2
+agbg1=2
+aga0=2
+aga1=2
 tssipos2g=1
 extpagain2g=2
 tssipos5g=1
@@ -77,46 +77,45 @@ tempthresh=255
 tempoffset=255
 rawtempsense=0x1ff
 
-## Rev0.1 TSSI Calibration -2014.01.09 for CORE0 RSE improvements and MFG TEST ONLY
-pa2ga0=0xff5e,0x1837,0xfd3d
-pa2ga1=0xff74,0x1a6c,0xfd14
-pa5ga0=0xff41,0x199c,0xfced,0xff58,0x1ac2,0xfcea,0xff4f,0x194f,0xfd06,0xff52,0x1936,0xfd0a
-pa5ga1=0xff40,0x1835,0xfd13,0xff50,0x18ea,0xfd12,0xff4c,0x1907,0xfd08,0xff47,0x18f2,0xfd08
 
-maxp2ga0=74
-maxp5ga0=66,66,66,66
-maxp2ga1=74
-maxp5ga1=66,66,66,66
+## TSSI Calibration - Rev1.1, 2014.01.06
+#pa2ga0=0xff68,0x16c9,0xfd5d
+#pa2ga1=0xff81,0x1632,0xfd77
+#pa5ga0=0xff3f,0x1606,0xfd52,0xff38,0x16bf,0xfd2f,0xff3e,0x16e9,0xfd33,0xff3e,0x17cd,0xfd15
+#pa5ga1=0xff3e,0x17db,0xfd13,0xff42,0x1800,0xfd14,0xff3b,0x16c6,0xfd35,0xff5b,0x182d,0xfd26
+pa2ga0=0xff68,0x16c9,0xfd5d
+pa2ga1=0xff81,0x1632,0xfd77
+pa5ga0=0xff3f,0x1806,0xfd21,0xff38,0x18bf,0xfcfd,0xff3e,0x18e9,0xfd02,0xff3e,0x19cd,0xfce5
+pa5ga1=0xff3e,0x19db,0xfce3,0xff42,0x1a00,0xfce5,0xff3b,0x18c6,0xfd04,0xff5b,0x1a2d,0xfcfd
 
+##Target Power 2G: 11b-14/11g-12/11n-11/11ac-11, 5G: 11a-10/11an-10/11ac-10
+maxp2ga0=70
+maxp5ga0=78,78,78,78
+maxp2ga1=70
+maxp5ga1=78,78,78,78
 subband5gver=0x4
-pdoffsetcckma0=0x4
-pdoffsetcckma1=0x3
+pdoffsetcckma0=0x3
+pdoffsetcckma1=0x4
 pdoffset40ma0=0x0000
 pdoffset80ma0=0x0000
 pdoffset40ma1=0x0000
 pdoffset80ma1=0x0000
-
-cckbw202gpo=0x1111
+cckbw202gpo=0x4444
 cckbw20ul2gpo=0x0000
-#dot11agofdmhrbw202gpo=0x7777
-dot11agofdmhrbw202gpo=0x3333
-ofdmlrbw202gpo=0x0033
-#mcsbw202gpo=0xbb777733
-mcsbw202gpo=0x77555533
-mcsbw402gpo=0x99777755
+dot11agofdmhrbw202gpo=0x8888
+ofdmlrbw202gpo=0x0088
+mcsbw202gpo=0xaaaaaaaa
+mcsbw402gpo=0xaaaaaaaa
 
-mcsbw205glpo=0x55555555
-mcsbw405glpo=0x77555555
-mcsbw805glpo=0x99555555
-
-mcsbw205gmpo=0x55555555
-mcsbw405gmpo=0x77555555
-mcsbw805gmpo=0x99555555
-
-
-mcsbw205ghpo=0x55555555
-mcsbw405ghpo=0x77555555
-mcsbw805ghpo=0x99555555
+mcsbw205glpo=0xcccccccc
+mcsbw405glpo=0xcccccccc
+mcsbw805glpo=0xcccccccc
+mcsbw205gmpo=0xcccccccc
+mcsbw405gmpo=0xcccccccc
+mcsbw805gmpo=0xcccccccc
+mcsbw205ghpo=0xcccccccc
+mcsbw405ghpo=0xcccccccc
+mcsbw805ghpo=0xcccccccc
 
 mcslr5glpo=0x0000
 mcslr5gmpo=0x0000
@@ -139,7 +138,7 @@ sb40and80lr5ghpo=0x0
 dot11agduphrpo=0x0
 dot11agduplrpo=0x0
 
-phycal_tempdelta=25
+phycal_tempdelta=255
 temps_period=15
 temps_hysteresis=15
 
@@ -147,22 +146,20 @@ AvVmid_c0=2,140,2,145,2,145,2,145,2,145
 AvVmid_c1=2,140,2,145,2,145,2,145,2,145
 AvVmid_c2=0,0,0,0,0,0,0,0,0,0
 
-rssicorrnorm_c0=3,3
+rssicorrnorm_c0=6,6
 rssicorrnorm_c1=2,2
 rssicorrnorm5g_c0=1,2,3,1,2,2,0,1,1,1,2,2
 rssicorrnorm5g_c1=1,2,3,0,2,2,1,2,3,3,3,4
 
+#rssicorrnorm_c0=4,4
+#rssicorrnorm_c1=4,4
+#rssicorrnorm5g_c0=1,2,3,1,2,3,6,6,8,6,6,8
+#rssicorrnorm5g_c1=1,2,3,2,2,2,7,7,8,7,7,8
+
 swctrlmap_5g=0x00000202,0x05050000,0x04040000,0x000000,0x047
-swctrlmap_2g=0x0000140c,0x28300000,0x08200000,0x803020,0x0ff
+swctrlmap_2g=0x0000140c,0x28300000,0x08200000,0x803000,0x0ff
 
 cckdigfilttype=1
-## 2G TX power compensation in room temp
-#powoffs2gtna0=2,1,1,1,1,1,0,0,0,0,1,1,2,0
-#powoffs2gtna1=2,2,2,2,2,1,1,0,-1,-1,-1,0,1,0
-
 
 #BT coex
 btc_mode=1
-btc_params84=7000
-btc_params10=20000
-btc_params8=45000
