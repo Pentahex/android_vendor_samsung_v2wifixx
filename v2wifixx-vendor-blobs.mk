@@ -61,6 +61,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/v2wifixx/proprietary/etc/gps.conf:system/etc/gps.conf \
     vendor/samsung/v2wifixx/proprietary/etc/gps.xml:system/etc/gps.xml \
     vendor/samsung/v2wifixx/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
+    vendor/samsung/v2wifixx/proprietary/lib/hw/gps.goldfish.so:system/lib/hw/gps.goldfish.so \
     vendor/samsung/v2wifixx/proprietary/bin/lpm:system/bin/lpm \
     vendor/samsung/v2wifixx/proprietary/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
     vendor/samsung/v2wifixx/proprietary/media/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
